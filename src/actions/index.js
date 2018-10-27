@@ -1,13 +1,14 @@
 import httpServer from '../../tools/httpServer';
-import cookie from "js-cookie";
+import cookie from 'js-cookie';
 import config from 'config';
 
 
-
 const project = {
-  columbus:{
+  columbus: {
     baseURL: config.API_HOST,
-    token: () => { return cookie.get('token') }
+    token: () => {
+      return cookie.get('token');
+    }
   }
 };
 
