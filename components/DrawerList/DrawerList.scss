@@ -8,4 +8,26 @@
   background: #393857;
   position: relative;
   color: #fff;
+
+  .avatar{
+    width: 80px;
+    height: 80px;
+    background: url("http://qiniu.goudanxi.com/WechatIMG159.jpeg") no-repeat;
+    background-size: 100% 100%;
+    border-radius: 100px;
+    overflow: hidden;
+    position: absolute;
+    top: 12px;
+    left: 34px;
+  }
+
+  .drawerBtn{
+    width: 35px;
+    height: 30px;
+    position: absolute;
+    top:38px;
+    right: 26px;
+    background: url("http://qiniu.goudanxi.com/drawer_icon.png") no-repeat;
+    background-size: 100% 100%;
+  }
 }

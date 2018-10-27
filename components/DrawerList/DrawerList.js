@@ -19,6 +19,8 @@ class DrawerList extends React.Component {
 
     return (
       <div className={s.container}>
+        <div className={s.avatar}></div>
+        <div className={s.drawerBtn}></div>
         <div className={`list_body`}>
           {list && list.map((obj, index) => {
             return <div key={index}>
