@@ -25,7 +25,8 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /(node_modules|build)/,
         query: {
-          presets: ['env']
+          presets: ['env'],
+          plugins: [['import', {libraryName: 'antd-mobile', style: 'css'}]]
         }
       }, {
         test: /\.scss$/,
@@ -39,7 +40,7 @@ module.exports = {
           }
         }, {
           loader: 'sass-loader'
-        },{
+        }, {
           loader: 'postcss-loader',
           options: {
             // Necessary for external CSS imports to work
@@ -52,9 +53,9 @@ module.exports = {
                   '>1%',
                   'last 4 versions',
                   'Firefox ESR',
-                  'not ie < 9', // React doesn't support IE8 anyway
+                  'not ie < 9' // React doesn't support IE8 anyway
                 ],
-                flexbox: 'no-2009',
+                flexbox: 'no-2009'
               }),
 
               postcssAspectRatioMini({}),
@@ -78,12 +79,12 @@ module.exports = {
               postcssViewportUnits({}),
 
               cssnano({
-                preset: "advanced",
+                preset: 'advanced',
                 autoprefixer: false,
-                "postcss-zindex": false
+                'postcss-zindex': false
               })
-            ],
-          },
+            ]
+          }
         }]
       }, {
         test: /\.css$/,
@@ -125,9 +126,9 @@ module.exports = {
     alias: {
       config: path.join(__dirname, '../../config', process.env.NODE_ENV),
       components: path.join(__dirname, '../../components'),
-      actions: path.join(__dirname, '../../src/actions','index'),
+      actions: path.join(__dirname, '../../src/actions', 'index'),
       utils: path.join(__dirname, '../../tools', 'utils'),
-      histories: path.join(__dirname, '../src', 'history'),
+      histories: path.join(__dirname, '../src', 'history')
     }
   }
 };
