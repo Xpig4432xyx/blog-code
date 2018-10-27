@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import router from './router';
+import RouterIndex from './router';
 
-ReactDOM.render(router, document.getElementById('app'));
+ReactDOM.render(<RouterIndex></RouterIndex>, document.getElementById('app'));

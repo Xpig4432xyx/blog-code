@@ -1,0 +1,10 @@
+@import "mixin";
+
+.container{
+  @include box(100vw,100vh);
+  background: url("http://qiniu.goudanxi.com/layout_bg.png") no-repeat;
+  background-size:100% 440px;
+  box-sizing: border-box;
+  padding: 92px 0 0;
+  position: relative;
+}

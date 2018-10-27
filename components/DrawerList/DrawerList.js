@@ -1,7 +1,7 @@
 import React from 'react';
-import s from './index.scss';
+import s from './DrawerList.scss';
 
-class IndexPage extends React.Component {
+class DrawerList extends React.Component {
   constructor() {
     super();
   }
@@ -9,10 +9,10 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div className={s.container}>
-        这是首页
+
       </div>
     );
   }
 }
 
-export default IndexPage;
+export default DrawerList;

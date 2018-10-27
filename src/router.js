@@ -10,18 +10,33 @@ import {
 import {Provider} from 'react-redux';
 import store from './store';
 import '../public/css/reset.scss';
+import {Drawer} from 'antd-mobile';
+import s from './router.scss';
 
 import Index from './page/index/index';
 
-const router = (
-  <Provider store={store}>
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Index}/>
-        <Redirect from="/" to="/"/>
-      </Switch>
-    </Router>
-  </Provider>
-);
 
-export default router;
+class RouterIndex extends React.Component {
+  constructor() {
+    super();
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <div className={s.container}>
+
+            <Switch>
+              <Route exact path="/" component={Index}/>
+              <Redirect from="/" to="/"/>
+            </Switch>
+          </div>
+
+        </Router>
+      </Provider>
+    );
+  }
+}
+
+export default RouterIndex;

@@ -1,0 +1,10 @@
+@import "../../src/mixin";
+
+.container{
+  @include box(300px,100%);
+  box-sizing: border-box;
+  padding-top: 138px;
+  background: #393857;
+  position: relative;
+  color: #fff;
+}
