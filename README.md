@@ -1,1 +1,1 @@
-# blog-code
+wisdom
