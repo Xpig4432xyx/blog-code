@@ -58,9 +58,6 @@ class RouterIndex extends React.Component {
               <Switch>
                 <Route exact path="/index" component={Index}/>
                 <Route exact path="/code" component={CodePage}/>
-                <Route strict path={'*'} render={() => {
-                  return <Redirect to={'/index'}/>;
-                }}/>
               </Switch>
             </div>
           </div>
