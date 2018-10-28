@@ -1,32 +1,42 @@
 import React from 'react';
 import s from './DrawerList.scss';
+import classNames from 'classnames/bind';
+
+let cx = classNames.bind(s);
 
 class DrawerList extends React.Component {
   constructor() {
     super();
+    this._renderDrawerList = this._renderDrawerList.bind(this);
   }
 
+  _renderDrawerList() {
+    const list = [
+      {name: '首页', path: '/index', iconfont: 'icon-ziyuan'},
+      {name: '技术分享', path: '/code', iconfont: 'icon-code'},
+      {name: '生活见闻', path: '/life', iconfont: 'icon-shenghuo'},
+      {name: '关于我', path: '/me', iconfont: 'icon-guanyuwomen'}
+    ];
+
+    return list.map((item, index) => {
+      return (
+        <div className={s.list} key={index}>
+          <i className={cx('iconfont', item.iconfont)}></i>
+          <span className={s.listName}>{item.name}</span>
+        </div>
+      );
+    });
+  }
 
   render() {
 
-    const list = [
-      {name: '数据统计', path: '/dataIndex'},
-      {name: '排行榜', path: '/rank'},
-      {name: '广告素材', path: '/pmMatter'},
-      {name: '我的空间', path: '/zone'},
-      {name: '账号设置', path: '/accountSetting'}
-    ];
 
     return (
       <div className={s.container}>
         <div className={s.avatar}></div>
         <div className={s.drawerBtn}></div>
-        <div className={`list_body`}>
-          {list && list.map((obj, index) => {
-            return <div key={index}>
-              你好
-            </div>;
-          })}
+        <div className={s.listBody}>
+          {this._renderDrawerList()}
         </div>
       </div>
     );

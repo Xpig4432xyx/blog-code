@@ -1,6 +1,6 @@
 @import "../../src/mixin";
 
-.container{
+.container {
   width: 300px;
   height: 100%;
   box-sizing: border-box;
@@ -9,7 +9,7 @@
   position: relative;
   color: #fff;
 
-  .avatar{
+  .avatar {
     width: 80px;
     height: 80px;
     background: url("http://qiniu.goudanxi.com/WechatIMG159.jpeg") no-repeat;
@@ -21,13 +21,38 @@
     left: 34px;
   }
 
-  .drawerBtn{
+  .drawerBtn {
     width: 35px;
     height: 30px;
     position: absolute;
-    top:38px;
+    top: 38px;
     right: 26px;
     background: url("http://qiniu.goudanxi.com/drawer_icon.png") no-repeat;
     background-size: 100% 100%;
+  }
+
+  .list {
+    width: 100%;
+    height: 100px;
+    padding: 16px 0;
+    box-sizing: border-box;
+    letter-spacing: 5px;
+    line-height: 69px;
+    opacity: .6;
+    position: relative;
+    color: #fff;
+    display: flex;
+    align-items: center;
+
+    i{
+      font-size: 30px;
+      padding-left: 40px;
+    }
+
+    .listName {
+      font-size: 26px;
+      font-weight: bold;
+      padding-left: 20px;
+    }
   }
 }
