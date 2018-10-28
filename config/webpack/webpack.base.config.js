@@ -128,7 +128,7 @@ module.exports = {
       components: path.join(__dirname, '../../components'),
       actions: path.join(__dirname, '../../src/actions', 'index'),
       utils: path.join(__dirname, '../../tools', 'utils'),
-      histories: path.join(__dirname, '../src', 'history')
+      histories: path.join(__dirname, '../../src', 'history')
     }
   }
 };

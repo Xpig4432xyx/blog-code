@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  Router,
   Route,
   Link,
   Redirect,
@@ -13,9 +13,11 @@ import '../public/css/reset.scss';
 import '../public/css/global.scss';
 import {Drawer} from 'antd-mobile';
 import s from './router.scss';
+import history from 'histories';
 
 import Index from './page/index/index';
 import DrawerList from 'components/DrawerList/DrawerList';
+import CodePage from './page/code/index';
 
 
 class RouterIndex extends React.Component {
@@ -35,12 +37,12 @@ class RouterIndex extends React.Component {
   render() {
 
     const sidebar = (
-      <DrawerList></DrawerList>
+      <DrawerList onOpenClick={this.onOpenChange} activeType={history.location.pathname}></DrawerList>
     );
 
     return (
       <Provider store={store}>
-        <Router>
+        <Router history={history}>
           <div className={s.container}>
             <Drawer
               style={{minHeight: document.documentElement.clientHeight}}
@@ -52,10 +54,15 @@ class RouterIndex extends React.Component {
               <div className={s.toptext}>GouDanXi的Blog</div>
               <div className={s.topbg}></div>
             </Drawer>
-            <Switch>
-              <Route exact path="/index" component={Index}/>
-              <Redirect from="/" to="/"/>
-            </Switch>
+            <div className={s.layout}>
+              <Switch>
+                <Route exact path="/index" component={Index}/>
+                <Route exact path="/code" component={CodePage}/>
+                <Route strict path={'*'} render={() => {
+                  return <Redirect to={'/index'}/>;
+                }}/>
+              </Switch>
+            </div>
           </div>
         </Router>
       </Provider>

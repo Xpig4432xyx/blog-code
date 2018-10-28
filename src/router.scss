@@ -2,7 +2,7 @@
 
 .container {
   @include box(100vw, 100vh);
-  background: url("http://qiniu.goudanxi.com/layout_bg.png") no-repeat;
+  background: url("http://qiniu.goudanxi.com/layout_bg.png") no-repeat #dbd4ef;
   background-size: 100% 440px;
   box-sizing: border-box;
   padding: 92px 0 0;
@@ -27,13 +27,27 @@
     font-weight: bold;
   }
 
-  .topbg{
+  .topbg {
     width: 48px;
     height: 49px;
     background: url("http://qiniu.goudanxi.com/layout_top.png") no-repeat;
     background-size: 100% 100%;
     position: absolute;
     right: 45px;
-    top:22px;
+    top: 22px;
+  }
+
+  .layout {
+    width: 700px;
+    height: calc(100vh - 107px);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: -2px 2px 8px 0 rgba(0, 0, 0, 0.08);
+    margin: 0 auto 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
   }
 }
