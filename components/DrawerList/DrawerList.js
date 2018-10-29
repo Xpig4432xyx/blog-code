@@ -41,7 +41,7 @@ class DrawerList extends React.Component {
     return (
       <div className={s.container}>
         <div className={s.avatar}></div>
-        <div className={s.drawerBtn}></div>
+        <div className={s.drawerBtn} onClick={() => this.props.onOpenClick()}></div>
         <div className={s.listBody}>
           {this._renderDrawerList()}
         </div>

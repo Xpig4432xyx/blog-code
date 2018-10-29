@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './index.scss';
+import Title from 'components/title/Title';
 
 class CodePage extends React.Component {
   constructor() {
@@ -9,7 +10,7 @@ class CodePage extends React.Component {
   render() {
     return (
       <div className={s.container}>
-        这是code
+        <Title title={'技术分享'}/>
       </div>
     );
   }

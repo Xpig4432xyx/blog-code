@@ -1,5 +1,7 @@
 import React from 'react';
 import s from './index.scss';
+import Title from 'components/title/Title';
+
 
 class IndexPage extends React.Component {
   constructor() {
