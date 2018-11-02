@@ -1,5 +1,8 @@
 import {combineReducers} from 'redux';
 
+import blog from './blog';
+import common from './common';
+
 function token(state = null, action) {
 
   switch (action.type) {
@@ -11,7 +14,7 @@ function token(state = null, action) {
 }
 
 const combinedReducer = combineReducers({
-  token
+  token, blog, common
 });
 
 const rootReducer = (state, action) => {

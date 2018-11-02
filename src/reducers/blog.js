@@ -1,10 +1,10 @@
 import Actions from 'actions';
-import _ from 'lodash';
 
 export default (state = {}, action) => {
-  switch(action.type){
+
+  switch (action.type) {
 
     default:
       return state;
   }
-}
+};

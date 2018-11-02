@@ -12,6 +12,14 @@ const project = {
 
 
 const actions = {
+
+  types: {
+    common: {
+      SHOWLOADING: 'SHOWLOADING',
+      HIDELOADING: 'HIDELOADING'
+    }
+  },
+
   http(pName, method, url, data) {
     return httpServer({method: method, url: url}, data, ...Object.values(project[pName])).then((res) => {
       return res;

@@ -1,12 +1,18 @@
 {
   "presets": [
-    "react"
+    "env",
+    "react",
+    "stage-1"
   ],
   "plugins": [
     "transform-runtime",
-    ["import", {
-      "libraryName": "antd-mobile", "style": "css"
-    }]
+    [
+      "import",
+      {
+        "libraryName": "antd-mobile",
+        "style": "css"
+      }
+    ]
     // `style: true` 会加载 less 文件
   ]
 }
