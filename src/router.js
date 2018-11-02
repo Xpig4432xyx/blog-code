@@ -56,6 +56,9 @@ class RouterIndex extends React.Component {
             </Drawer>
             <div className={s.layout}>
               <Switch>
+                <Route exact path="/" render={() => {
+                  return <Redirect to="/index"/>;
+                }}/>
                 <Route exact path="/index" component={Index}/>
                 <Route exact path="/code" component={CodePage}/>
               </Switch>

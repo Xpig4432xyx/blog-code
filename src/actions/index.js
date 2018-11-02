@@ -1,14 +1,12 @@
 import httpServer from '../../tools/httpServer';
-import cookie from 'js-cookie';
-import config from 'config';
+import blog from './blog';
+import githubToken from '../../config/githubConfig.js';
 
 
 const project = {
-  columbus: {
-    baseURL: config.API_HOST,
-    token: () => {
-      return cookie.get('token');
-    }
+  github: {
+    baseURL: 'https://api.github.com',
+    token: githubToken
   }
 };
 
@@ -22,5 +20,5 @@ const actions = {
 };
 
 export default Object.assign(
-  actions
+  actions, blog
 );

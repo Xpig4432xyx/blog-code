@@ -26,5 +26,6 @@ public/dist
 
 .byebug_history
 .idea/
+config/githubConfig.js
 
 *.un~

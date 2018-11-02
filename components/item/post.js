@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './post.scss';
 import classNames from 'classnames/bind';
+import utils from 'utils';
 
 
 let cx = classNames.bind(s);
@@ -13,14 +14,16 @@ class Post extends React.Component {
 
   render() {
 
+    const {list} = this.props;
+
     return (
       <div className={s.container}>
-        <div className={s.title}>这是标题</div>
+        <div className={s.title}>{list.title}</div>
         <div className={s.time}>
           <i className={cx('iconfont', 'icon-shijian')}></i>
-          <span>2018-1-2</span>
+          <span>{new Date(list.updatedAt).format('yyyy-MM-dd')}</span>
         </div>
-        <p className={s.postContent}>最近有人问我博客的代码块是怎么做的，如下面的代码块，然后好久没有写文章了，趁着周末有时间就水一篇吧~</p>
+        <p className={s.postContent}>{utils.autoAddEllipsis(list.bodyText, 90)}</p>
         <img src="http://qiniu.goudanxi.com/layout_top.png" alt="" className={s.img}/>
         <span className={s.line}></span>
       </div>

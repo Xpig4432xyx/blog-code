@@ -1,73 +1,74 @@
 import axios from 'axios';
 
 axios.interceptors.request.use(config => {
-  return config
+  return config;
 }, error => {
-  return Promise.reject(error)
+  return Promise.reject(error);
 });
 
 
 axios.interceptors.response.use(response => {
-  return response.data
+  return response.data;
 }, error => {
-  return Promise.reject(error)
+  return Promise.reject(error);
 });
 
 function errorState(response) {
-  //错误处理
+  // 错误处理
 }
 
 function successState(res) {
-  //正确处理
+  // 正确处理
 }
+
 const httpServer = (opts, data, baseURL, token) => {
 
 
-  let Public = { //公共参数
+  let Public = { // 公共参数
 
   };
 
-  let httpDefaultOpts = { //http默认配置
-    method:opts.method,
+  let httpDefaultOpts = { // http默认配置
+    method: opts.method,
     baseURL: baseURL,
     url: opts.url,
-    timeout: 10000,
+    timeout: 100000,
     params: Object.assign(Public, data),
     data: Object.assign(Public, data),
-    headers: opts.method=='get' ? {
-      "Authorization" : `Bearer ${token && token()}`,
-      "X-Requested-With": 'XMLHttpRequest',
-      "Accept": "application/json",
-      "Content-Type": "application/json; charset=UTF-8",
+    headers: opts.method === 'get' ? {
+      'Authorization': `Bearer ${token}`,
+      'X-Requested-With': 'XMLHttpRequest',
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     } : {
-      "Authorization" : `Bearer ${token && token()}`,
-      "X-Requested-With": "XMLHttpRequest",
-      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+      'Authorization': `Bearer ${token}`,
+      'X-Requested-With': 'XMLHttpRequest',
+      'Accept': 'application/json',
+      'Content-Type': 'application/json; charset=UTF-8'
     }
   };
 
-  if(opts.method=='get'){
-    delete httpDefaultOpts.data
-  }else{
-    delete httpDefaultOpts.params
+  if (opts.method === 'get') {
+    delete httpDefaultOpts.data;
+  } else {
+    delete httpDefaultOpts.params;
   }
 
   let promise = new Promise(function(resolve, reject) {
     axios(httpDefaultOpts).then(
-        (res) => {
-          successState(res);
-          resolve(res)
-        }
+      (res) => {
+        successState(res);
+        resolve(res);
+      }
     ).catch(
-        (response) => {
-          errorState(response);
-          reject(response)
-        }
-    )
+      (response) => {
+        errorState(response);
+        reject(response);
+      }
+    );
 
   });
 
-  return promise
+  return promise;
 };
 
-export default httpServer
+export default httpServer;
