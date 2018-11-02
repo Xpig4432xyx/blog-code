@@ -1,0 +1,51 @@
+.container{
+  box-sizing: border-box;
+  width: 88%;
+  margin: 40px auto;
+
+  .title{
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+  }
+
+  .time{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #999;
+
+    span{
+      margin-left: 10px;
+      font-size: 26px;
+    }
+  }
+
+  .postContent{
+    font-size: 26px;
+    color: #333;
+    margin-top: 20px;
+    line-height: 1.8;
+  }
+
+  .img{
+    display: block;
+    box-sizing: border-box;
+    padding: 4px;
+    border: 1px solid #ddd;
+    margin: 20px auto 0;
+    object-fit: cover;
+    width: 88%;
+    height: 240px;
+  }
+
+  .line{
+    display: block;
+    width: 200px;
+    height: 2px;
+    background: #ddd;
+    margin: 60px auto 0;
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './index.scss';
 import Title from 'components/title/Title';
+import Post from 'components/item/post';
 
 
 class IndexPage extends React.Component {
@@ -11,7 +12,16 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div className={s.container}>
-        这是首页
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
       </div>
     );
   }

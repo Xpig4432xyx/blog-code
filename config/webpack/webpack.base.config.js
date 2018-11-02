@@ -2,12 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-const postcssAspectRatioMini = require('postcss-aspect-ratio-mini');
 const postcssPxToViewport = require('postcss-px-to-viewport');
-const postcssWriteSvg = require('postcss-write-svg');
 const postcssCssnext = require('postcss-cssnext');
-const postcssViewportUnits = require('postcss-viewport-units');
-const cssnano = require('cssnano');
 
 module.exports = {
   entry: {
@@ -57,9 +53,6 @@ module.exports = {
                 ],
                 flexbox: 'no-2009'
               }),
-
-              postcssAspectRatioMini({}),
-
               postcssPxToViewport({
                 viewportWidth: 720, // (Number) The width of the viewport.
                 viewportHeight: '', // (Number) The height of the viewport.
@@ -69,20 +62,7 @@ module.exports = {
                 minPixelValue: 1, // (Number) Set the minimum pixel value to replace.
                 mediaQuery: false // (Boolean) Allow px to be converted in media queries.
               }),
-
-              postcssWriteSvg({
-                utf8: false
-              }),
-
-              postcssCssnext({}),
-
-              postcssViewportUnits({}),
-
-              cssnano({
-                preset: 'advanced',
-                autoprefixer: false,
-                'postcss-zindex': false
-              })
+              postcssCssnext({})
             ]
           }
         }]
