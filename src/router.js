@@ -20,6 +20,8 @@ import DrawerList from 'components/DrawerList/DrawerList';
 import CodePage from './page/code/index';
 import Loading from 'components/item/loading';
 import Content from './page/code/content';
+import LifePage from './page/life/index';
+import AboutPage from './page/about/index';
 
 
 class RouterIndex extends React.Component {
@@ -64,6 +66,8 @@ class RouterIndex extends React.Component {
                 <Route exact path="/index" component={Index}/>
                 <Route exact path="/code" component={CodePage}/>
                 <Route exact path="/code/:id?" component={Content}/>
+                <Route exact path="/life" component={LifePage}/>
+                <Route exact path="/me" component={AboutPage}/>
               </Switch>
               <Loading/>
             </div>

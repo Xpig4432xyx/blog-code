@@ -9,6 +9,8 @@ const combinedReducer = combineReducers({
 
 const rootReducer = (state, action) => {
   const intermediateState = combinedReducer(state, action);
+  console.log(state, action, intermediateState);
+
   return intermediateState;
 };
 

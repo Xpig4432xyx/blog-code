@@ -59,7 +59,6 @@ class IndexPage extends React.Component {
   _renderPost() {
     const {list} = this.state;
     return list && list.map((item, index) => {
-      console.log(item);
       return <Post
         key={item.cursor}
         list={item.node}

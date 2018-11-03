@@ -18,7 +18,7 @@ if (process.env.isDebug) {
   middleWare.push(loggerMiddleware);
 }
 
-const store = createStore(reducer, initialState, compose(
+const store = createStore(reducer, {common: {isLoading: false}}, compose(
   persistState(storage, 'redux'),
   applyMiddleware(...middleWare),
   window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f

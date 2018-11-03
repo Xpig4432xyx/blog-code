@@ -1,6 +1,12 @@
 import Actions from 'actions';
 
-export default (state = {isLoading: false}, action) => {
+const initialState = {
+  isLoading: false
+};
+
+export default (state = initialState, action) => {
+
+  console.log(state, '111');
 
   switch (action.type) {
 
