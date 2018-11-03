@@ -5,9 +5,7 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-
-  console.log(state, '111');
-
+  
   switch (action.type) {
 
     case Actions.types.common.SHOWLOADING:
