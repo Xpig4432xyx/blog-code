@@ -19,6 +19,7 @@ import Index from './page/index/index';
 import DrawerList from 'components/DrawerList/DrawerList';
 import CodePage from './page/code/index';
 import Loading from 'components/item/loading';
+import Content from './page/code/content';
 
 
 class RouterIndex extends React.Component {
@@ -62,6 +63,7 @@ class RouterIndex extends React.Component {
                 }}/>
                 <Route exact path="/index" component={Index}/>
                 <Route exact path="/code" component={CodePage}/>
+                <Route exact path="/code/:id?" component={Content}/>
               </Switch>
               <Loading/>
             </div>

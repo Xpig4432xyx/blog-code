@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './DrawerList.scss';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 let cx = classNames.bind(s);
@@ -26,7 +26,7 @@ class DrawerList extends React.Component {
     return list.map((item, index) => {
       return (
         <Link className={s.list} to={item.path} key={index} onClick={() => this.props.onOpenClick()}>
-          <div className={cx('listBox', {active: activeType === item.path})}>
+          <div className={cx('listBox', {active: activeType.indexOf(item.path) !== -1})}>
             <i className={cx('iconfont', item.iconfont)}></i>
             <span className={s.listName}>{item.name}</span>
           </div>
