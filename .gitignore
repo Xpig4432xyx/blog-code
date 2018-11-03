@@ -9,6 +9,7 @@
 node_modules
 public/dist
 #public/index.html
+/dist
 
 # Ignore the default SQLite database.
 /db/*.sqlite3

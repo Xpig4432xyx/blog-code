@@ -3,7 +3,14 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const postcssPxToViewport = require('postcss-px-to-viewport');
-const postcssCssnext = require('postcss-cssnext');
+
+const isDebug = (() => {
+  if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+    return false;
+  } else {
+    return true;
+  }
+})();
 
 module.exports = {
   entry: {
@@ -14,6 +21,7 @@ module.exports = {
     filename: '[name].js',
     publicPath: '/'
   },
+  devtool: isDebug ? 'source-map' : false,
   module: {
     rules: [
       {
@@ -61,8 +69,7 @@ module.exports = {
                 selectorBlackList: ['.ignore', '.hairlines'], // (Array) The selectors to ignore and leave as px.
                 minPixelValue: 1, // (Number) Set the minimum pixel value to replace.
                 mediaQuery: false // (Boolean) Allow px to be converted in media queries.
-              }),
-              postcssCssnext({})
+              })
             ]
           }
         }]
